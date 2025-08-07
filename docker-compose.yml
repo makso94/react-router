@@ -1,0 +1,14 @@
+services:
+  webapp:
+    build: .
+    container_name: react_frontend
+    user: "1000:1000" # Matches your host user/group IDs
+    ports: 
+      - "3000:3000"
+    volumes:
+      - ./:/project
+    stdin_open: true    # Same as -i
+    tty: true           # Same as -t
+    command: /bin/bash  # Starts bash shell
+
+  
