@@ -7,6 +7,10 @@ services:
       - "3000:3000"
     volumes:
       - ./:/project
+      - /tmp:/tmp
+      - ~/.ssh:/home/node/.ssh
+      - react_frontend_user_local:/home/node/.local/
+      - react_frontend_vs_code_volume:/home/node/.vscode-server/
     stdin_open: true    # Same as -i
     tty: true           # Same as -t
     command: /bin/bash  # Starts bash shell
